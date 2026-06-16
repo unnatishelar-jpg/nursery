@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vasundhara Nursery | Premium Plants in Panchavati, Nashik</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
@@ -183,7 +184,23 @@
             inset: 0;
             background:
                 linear-gradient(135deg, rgba(6,15,6,0.75), rgba(12,26,12,0.65)),
-                url('https://images.pexels.com/photos/1459345/pexels-photo-1459345.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover fixed;
+                url('https://m.media-amazon.com/images/I/716+zj5k+7L._AC_UF1000,1000_QL80_.jpg') center/cover;
+            background-blend-mode: overlay;
+            background-attachment: scroll;
+            background-size: cover;
+            z-index: 1;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 40%;
+            background: linear-gradient(to bottom, rgba(6,15,6,0) 0%, var(--bg-dark) 65%, var(--bg-dark) 100%);
+            pointer-events: none;
+            z-index: 2;
         }
         .hero-overlay {
             position: absolute;
@@ -564,32 +581,80 @@
 
         .featured-banner {
             background: linear-gradient(135deg, rgba(6,15,6,0.95), rgba(12,26,12,0.9)),
-                        url('https://cdn.prod.website-files.com/66749f99929e6bbf9c89b9b8/673c6dd4f86078be7346f0d7_Golden_Gate_Nursery_2024_%40ES9_Photography_2024-23%20Optimized.webp') center/cover fixed;
+                        url('https://img77.uenicdn.com/image/upload/v1562263054/business/nazmin-nursery-1/77df9fc0-93d9-469a-b6c7-8656b54868c1.jpg') center/cover;
+            background-blend-mode: screen;
+            background-attachment: scroll;
+            background-size: cover;
             padding: 2.2rem 3rem 2.6rem; /* reduced vertical padding to remove blank gap */
             margin-top: -90px; /* ensure banner pulls up over previous section */
             position: relative;
             overflow: hidden;
             z-index: 4;
         }
+        .featured-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.06) 40%, rgba(255,255,255,0.02) 60%);
+            pointer-events: none;
+            z-index: 3;
+        }
         .featured-content {
-            max-width: 900px;
+            max-width: 920px;
             margin: 0 auto;
             text-align: center;
             position: relative;
-            z-index: 5;
+            z-index: 6;
+            padding: 2rem 2.5rem; /* subtle card to improve contrast */
+            background: linear-gradient(180deg, rgba(0,0,0,0.30), rgba(0,0,0,0.16));
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.45);
         }
         .featured-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 4.2rem;
+            line-height: 1.02;
+            /* gold gradient + subtle stroke */
+            background: linear-gradient(90deg, #fffaf0 0%, var(--gold) 45%, #ffd98a 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-stroke: 0.6px rgba(0,0,0,0.28);
+            margin-bottom: 0.8rem;
+            text-shadow: 0 10px 26px rgba(0,0,0,0.56);
+            letter-spacing: 0.6px;
+            font-style: normal;
+            text-transform: none;
+            position: relative;
+            display: inline-block;
+            overflow: visible;
+        }
+        .featured-content h2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -60%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0.45), rgba(255,255,255,0.08), rgba(255,255,255,0));
+            transform: skewX(-20deg);
+            mix-blend-mode: screen;
+            pointer-events: none;
+            animation: sheen 4.5s linear infinite;
+        }
+        @keyframes sheen {
+            0% { left: -60%; }
+            100% { left: 140%; }
         }
         .featured-content p {
+            font-family: 'Inter', sans-serif;
             font-size: 1.1rem;
-            color: var(--text-muted);
-            max-width: 650px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.8;
+            color: rgba(255,255,255,0.95);
+            max-width: 720px;
+            margin: 0 auto 1.8rem;
+            line-height: 1.9;
+            text-shadow: 0 5px 18px rgba(0,0,0,0.45);
         }
         .featured-stats {
             display: flex;
@@ -610,11 +675,11 @@
             display: block;
         }
         .featured-stat h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--text-light);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            color: var(--gold);
         }
-        .featured-stat p { color: var(--text-muted); font-size: 0.85rem; }
+        .featured-stat p { color: rgba(240,245,237,0.9); font-size: 0.95rem; }
 
         #gallery {
             background: var(--bg-darker);
@@ -945,6 +1010,43 @@
             transform: translate(-50%, -50%);
         }
 
+        /* Falling petals/leaves effect */
+        .floating-petals { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 9999; }
+        .petal {
+            position: absolute;
+            top: -10vh;
+            font-size: 24px;
+            will-change: transform, opacity;
+            opacity: 0.98;
+            filter: drop-shadow(0 6px 10px rgba(0,0,0,0.15));
+            animation-fill-mode: forwards;
+        }
+        .petal.leaf { color: rgba(255,255,255,0.95); }
+        .petal.flower { color: rgba(255,230,235,0.98); }
+
+        @keyframes petalFall {
+            0% {
+                transform: translate3d(0, -2vh, 0) rotate(0deg);
+                opacity: 0.98;
+            }
+            25% {
+                transform: translate3d(6vw, 25vh, 0) rotate(45deg);
+                opacity: 0.9;
+            }
+            50% {
+                transform: translate3d(-6vw, 55vh, 0) rotate(120deg);
+                opacity: 0.75;
+            }
+            75% {
+                transform: translate3d(8vw, 85vh, 0) rotate(200deg);
+                opacity: 0.4;
+            }
+            100% {
+                transform: translate3d(-4vw, 120vh, 0) rotate(300deg);
+                opacity: 0.06;
+            }
+        }
+
         @media (max-width: 1150px) {
             .about-grid { grid-template-columns: 1fr; gap: 3rem; }
             .about-image-card { position: relative; bottom: auto; right: auto; margin-top: 1.5rem; }
@@ -996,6 +1098,8 @@
 </div>
 <div class="progress-bar" id="progressBar"></div>
 <div class="cursor-glow" id="cursorGlow"></div>
+<!-- Falling petals / leaves container -->
+<div class="floating-petals" id="floatingPetals" aria-hidden="true"></div>
 
 <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -1086,13 +1190,11 @@
         <div class="extra-gallery" aria-label="Additional selection">
             <div class="gallery-track">
                 <div class="gallery-item" data-aos="zoom-in"><img src="https://plantsguru.com/cdn/shop/files/plants-guru-medicinal-plants-sandalwood-white.jpg?v=1735618416" alt="Sandalwood 1"><div class="gallery-caption">Sandalwood — premium sapling</div></div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="60"><img src="https://plantsguru.com/cdn/shop/files/plants-guru-medicinal-plants-sandalwood-white.jpg?v=1735618416" alt="Sandalwood 2"><div class="gallery-caption">Sandalwood — specimen</div></div>
                 <div class="gallery-item" data-aos="zoom-in" data-aos-delay="120"><img src="https://ashanursery.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-24-at-5.19.19-PM.jpeg" alt="Nursery 1"><div class="gallery-caption">Nursery view — healthy beds</div></div>
                 <div class="gallery-item" data-aos="zoom-in" data-aos-delay="180"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDAKCxtAQkTO4DIccNcVjCe8F8T1Z_86TabA&s" alt="Plant 1"><div class="gallery-caption">Exotic variety</div></div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="240"><img src="https://5.imimg.com/data5/SELLER/Default/2025/4/502166635/FP/FT/RP/243827232/whatsapp-image-2025-04-10-at-7-56-22-pm-500x500.jpeg" alt="Plant 2"><div class="gallery-caption">Field-grown sapling</div></div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300"><img src="https://5.imimg.com/data5/SELLER/Default/2025/6/519961976/IW/BG/HH/88930720/red-sandalwood-plant.jpeg" alt="Red Sandalwood"><div class="gallery-caption">Red Sandalwood</div></div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="360"><img src="https://5.imimg.com/data5/SELLER/Default/2025/6/519961976/IW/BG/HH/88930720/red-sandalwood-plant.jpeg" alt="Red Sandalwood 2"><div class="gallery-caption">Red Sandalwood — specimen</div></div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="420"><img src="https://5.imimg.com/data5/SELLER/Default/2025/5/513535116/PA/IG/ME/245686368/whatsapp-image-2025-05-23-at-5-23-21-pm-500x500.jpeg" alt="Sapling"><div class="gallery-caption">Healthy sapling</div></div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="240"><img src="https://5.imimg.com/data5/SELLER/Default/2025/4/502166635/FP/FT/RP/243827232/whatsapp-image-2025-04-10-at-7-56-22-pm-500x500.jpeg" alt="Field Sapling"><div class="gallery-caption">Field-grown sapling</div></div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300"><img src="https://5.imimg.com/data5/SELLER/Default/2025/6/519961976/IW/BG/HH/88930720/red-sandalwood-plant.jpeg" alt="Red Sandalwood"><div class="gallery-caption">Red Sandalwood — specimen</div></div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="360"><img src="https://5.imimg.com/data5/SELLER/Default/2025/5/513535116/PA/IG/ME/245686368/whatsapp-image-2025-05-23-at-5-23-21-pm-500x500.jpeg" alt="Sapling"><div class="gallery-caption">Healthy sapling</div></div>
             </div>
         </div>
         <!-- <div class="plants-grid">
@@ -1585,6 +1687,37 @@
             }
         });
     });
+</script>
+<script>
+// Decorative falling petals/leaves (light-colored)
+;(function(){
+    const container = document.getElementById('floatingPetals');
+    if(!container) return;
+    const symbolsLeaf = ['🍃','🍂'];
+    const symbolsFlower = ['🌸','🌼'];
+    const max = 12; // lower density
+    function rand(min,max){return Math.random()*(max-min)+min}
+    function make(){
+        const isFlower = Math.random() > 0.90; // ~10% are flowers
+        const el = document.createElement('div');
+        el.className = 'petal ' + (isFlower ? 'flower' : 'leaf');
+        el.textContent = isFlower ? symbolsFlower[Math.floor(Math.random()*symbolsFlower.length)] : symbolsLeaf[Math.floor(Math.random()*symbolsLeaf.length)];
+        // flowers should be much smaller
+        const size = isFlower ? Math.round(rand(8,16)) : Math.round(rand(12,34));
+        el.style.fontSize = size + 'px';
+        el.style.left = rand(4,96) + '%';
+        const dur = rand(9,18);
+        const delay = rand(0,6);
+        el.style.animation = `petalFall ${dur}s linear ${delay}s forwards`;
+        el.style.opacity = isFlower ? 0.96 : 0.98;
+        container.appendChild(el);
+        setTimeout(()=> el.remove(), (delay+dur+1)*1000);
+    }
+    // initial - lighter
+    for(let i=0;i<4;i++) setTimeout(make, i*420);
+    const tick = setInterval(()=>{ if(container.children.length < max) make(); }, 2500);
+    document.addEventListener('visibilitychange', ()=>{ if(document.hidden) clearInterval(tick); });
+})();
 </script>
 </body>
 </html>
