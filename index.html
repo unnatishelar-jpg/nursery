@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Vasundhara Nursery | Premium Plants, Panchavati, Nashik</title>
+  <!-- Google Fonts & CSS Libraries -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FDFAF3;
+      color: #1e2f1c;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* scroll progress indicator */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      background: linear-gradient(90deg, #2c5e2e, #9bc48f);
+      z-index: 10000;
+      transition: width 0.08s linear;
+      box-shadow: 0 0 6px rgba(46, 125, 50, 0.6);
+    }
+
+    /* loader */
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #1e2f1c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      transition: opacity 0.8s ease, visibility 0.8s;
+    }
+    .loader.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .loader-text {
+      font-size: 2rem;
+      color: #e9f5e3;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 4px;
+    }
+
+    /* glassmorphism + sticky nav */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 248, 235, 0.85);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      transition: all 0.3s;
+    }
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #2b5e2b, #7ca86b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c3a2b;
+      transition: 0.3s;
+    }
+    .nav-links a:hover { color: #4c8b3c; transform: translateY(-2px); }
+    .mobile-menu {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* sections */
+    section {
+      padding: 5rem 2rem;
+      overflow: hidden;
+    }
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/1032650/pexels-photo-1032650.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover fixed;
+      background-attachment: fixed;
+    }
+    /* CHANGE HERO IMAGE HERE */
+    .hero-overlay {
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: brightness(1.05);
+      width: 100%;
+      padding: 2rem;
+    }
+    .hero-content {
+      text-align: center;
+      color: white;
+    }
+    .hero h1 {
+      font-size: 5rem;
+      font-family: 'Playfair Display', serif;
+      text-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .hero p {
+      font-size: 1.4rem;
+      margin: 1rem 0 2rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .btn {
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary {
+      background: #2c5e2e;
+      color: white;
+      box-shadow: 0 8px 18px rgba(44,94,46,0.3);
+    }
+    .btn-primary:hover {
+      background: #1f4521;
+      transform: scale(1.03);
+    }
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+      backdrop-filter: blur(4px);
+    }
+    .btn-outline:hover {
+      background: white;
+      color: #2c5e2e;
+    }
+
+    /* about cards */
+    .split-layout {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .about-text { flex: 1.2; }
+    .about-cards { flex: 1; display: flex; flex-direction: column; gap: 1.2rem; }
+    .glass-card {
+      background: rgba(255, 255, 245, 0.75);
+      backdrop-filter: blur(8px);
+      border-radius: 28px;
+      padding: 1.5rem;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    .glass-card:hover { transform: translateY(-5px); background: rgba(255,255,240,0.9); }
+
+    /* plant cards */
+    .plants-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .plant-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    }
+    .plant-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 30px 40px rgba(0,0,0,0.15);
+    }
+    .plant-img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+    .plant-card:hover .plant-img { transform: scale(1.05); }
+
+    /* parallax sandalwood */
+    .parallax-sandal {
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      background-image: url('https://images.pexels.com/photos/11614190/pexels-photo-11614190.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      position: relative;
+    }
+    /* CHANGE SANDALWOOD IMAGE HERE */
+    .sandal-overlay {
+      background: rgba(20, 30, 10, 0.65);
+      backdrop-filter: blur(3px);
+      padding: 5rem 1rem;
+      text-align: center;
+      color: white;
+    }
+
+    /* masonry gallery */
+    .masonry-gallery {
+      column-count: 3;
+      column-gap: 1.5rem;
+    }
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 1.5rem;
+      border-radius: 24px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      border-radius: 24px;
+      transition: transform 0.5s;
+    }
+    .gallery-item:hover img { transform: scale(1.02); }
+
+    /* stat counters */
+    .stats-grid {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+      text-align: center;
+    }
+    .stat-card {
+      flex: 1;
+      min-width: 150px;
+      background: rgba(235, 245, 225, 0.6);
+      backdrop-filter: blur(8px);
+      border-radius: 48px;
+      padding: 2rem;
+    }
+    .counter {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #2c5e2e;
+    }
+
+    /* testimonials */
+    .testimonial-grid {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .testi-card {
+      flex: 1;
+      background: rgba(255,255,245,0.7);
+      backdrop-filter: blur(12px);
+      border-radius: 2rem;
+      padding: 2rem;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    }
+
+    /* contact */
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .contact-info, .contact-map {
+      flex: 1;
+      background: rgba(255,255,240,0.6);
+      backdrop-filter: blur(8px);
+      padding: 2rem;
+      border-radius: 32px;
+    }
+
+    footer {
+      background: #1b2a18;
+      color: #ddd;
+      padding: 3rem 2rem 1rem;
+    }
+
+    /* floating leaves */
+    .floating-leaf {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      font-size: 1.7rem;
+      opacity: 0.3;
+      animation: floatLeaf linear infinite;
+    }
+    @keyframes floatLeaf {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0.3; }
+      100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* glow follow */
+    .glow-cursor {
+      position: fixed;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(120,180,90,0.2) 0%, rgba(80,130,50,0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: transform 0.05s;
+    }
+
+    @media (max-width: 800px) {
+      .masonry-gallery { column-count: 2; }
+      .hero h1 { font-size: 2.8rem; }
+      .nav-links { display: none; }
+      .mobile-menu { display: block; }
+      .nav-links.active { display: flex; flex-direction: column; background: rgba(255,248,235,0.96); backdrop-filter: blur(20px); width: 100%; padding: 1.5rem; border-radius: 2rem; margin-top: 1rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="loader" id="loader">
+  <div class="loader-text">Vasundhara 🌿</div>
+</div>
+<div class="progress-bar" id="progressBar"></div>
+<div class="glow-cursor" id="glowCursor"></div>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo"><i class="fas fa-seedling"></i> Vasundhara Nursery</div>
+    <div class="mobile-menu" id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#plants">Plants</a></li>
+      <li><a href="#sandalwood">Sandalwood</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="home" class="hero">
+  <div class="hero-overlay">
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
+      <i class="fas fa-leaf" style="font-size: 3rem; color: #d4e2c6;"></i>
+      <h1>Vasundhara Nursery</h1>
+      <p>Premium Fruit & Sandalwood Plants in Panchavati, Nashik</p>
+      <div class="btn-group">
+        <a href="#plants" class="btn btn-primary">Explore Plants</a>
+        <a href="#contact" class="btn btn-outline">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="split-layout">
+      <div class="about-text" data-aos="fade-right">
+        <h2 style="font-size: 2.5rem; font-family: 'Playfair Display';">Rooted in Nature,<br>Nurtured with Care</h2>
+        <p style="margin: 1.5rem 0;">Vasundhara Nursery is a trusted plant nursery located in Panchavati, Nashik, offering premium-quality fruit plants, sandalwood plants, and garden varieties for homes, farms, and commercial plantations.</p>
+      </div>
+      <div class="about-cards" data-aos="fade-left">
+        <div class="glass-card"><i class="fas fa-clock" style="font-size: 2rem; color:#3d7240;"></i><h3>10+ Years Experience</h3><p>Decades of expertise in horticulture & sandalwood cultivation.</p></div>
+        <div class="glass-card"><i class="fas fa-check-circle"></i><h3>Quality Assurance</h3><p>Premium, disease-free plants with assured growth.</p></div>
+        <div class="glass-card"><i class="fas fa-tree"></i><h3>Sustainable Farming</h3><p>Eco-friendly practices & organic nurturing.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="plants">
+  <div class="container">
+    <h2 data-aos="fade-up" style="text-align:center; font-size:2.8rem;">Our Featured Plants</h2>
+    <div class="plants-grid">
+      <!-- Fruit Plants Cards -->
+      <!-- CHANGE PLANT IMAGE HERE -->
+      <div class="plant-card" data-aos="zoom-in"><img class="plant-img" src="https://images.pexels.com/photos/11408901/pexels-photo-11408901.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Mango"><div class="plant-card" style="padding:1rem;"><h3>Mango</h3><p>Juicy Alphonso & Kesar grafts, ready to bear fruits.</p></div></div>
+      <div class="plant-card" data-aos="zoom-in"><img class="plant-img" src="https://images.pexels.com/photos/1404853/pexels-photo-1404853.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Guava"><div class="plant-card" style="padding:1rem;"><h3>Guava</h3><p>High-yield, aromatic guava plants for orchards.</p></div></div>
+      <div class="plant-card" data-aos="zoom-in"><img class="plant-img" src="https://images.pexels.com/photos/2133223/pexels-photo-2133223.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Lemon"><div class="plant-card" style="padding:1rem;"><h3>Lemon</h3><p>Ever-bearing, fragrant lemon trees for gardens.</p></div></div>
+      <div class="plant-card" data-aos="zoom-in"><img class="plant-img" src="https://images.pexels.com/photos/1106809/pexels-photo-1106809.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pomegranate"><div class="plant-card" style="padding:1rem;"><h3>Pomegranate</h3><p>Sweet ruby-red variety, rich in antioxidants.</p></div></div>
+      <div class="plant-card" data-aos="zoom-in"><img class="plant-img" src="https://images.pexels.com/photos/13325120/pexels-photo-13325120.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sapota"><div class="plant-card" style="padding:1rem;"><h3>Sapota</h3><p>Delicious, caramel-flavored fruit plants.</p></div></div>
+      <!-- Sandalwood special card -->
+      <div class="plant-card" data-aos="zoom-in"><img class="plant-img" src="https://images.pexels.com/photos/6531686/pexels-photo-6531686.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sandalwood"><div class="plant-card" style="padding:1rem;"><h3>Sandalwood Plants</h3><p>High-value, genuine sandalwood saplings for long-term investment.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="sandalwood" class="parallax-sandal">
+  <div class="sandal-overlay" data-aos="fade-up">
+    <h2 style="font-size:3rem;">Premium Sandalwood Estate</h2>
+    <div style="display:flex; gap:2rem; justify-content:center; flex-wrap:wrap; margin-top:2rem;">
+      <div class="glass-card" style="background: rgba(0,0,0,0.5); color:white;">🌿 High-value plantation</div>
+      <div class="glass-card" style="background: rgba(0,0,0,0.5); color:white;">💰 Long-term investment</div>
+      <div class="glass-card" style="background: rgba(0,0,0,0.5); color:white;">🌱 Sustainable growth</div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <h2 data-aos="fade-up" style="text-align:center;">Nursery Gallery</h2>
+    <div class="masonry-gallery" data-aos="fade-up">
+      <!-- GALLERY IMAGE 1 to 12 -->
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/4503723/pexels-photo-4503723.jpeg?auto=compress&cs=tinysrgb&w=400" alt="gallery1"><!-- REPLACE THIS IMAGE WITH ACTUAL NURSERY IMAGE --></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/9677239/pexels-photo-9677239.jpeg?auto=compress&cs=tinysrgb&w=400" alt="gallery2"></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/2663519/pexels-photo-2663519.jpeg?auto=compress&cs=tinysrgb&w=400" alt="gallery3"></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/2400393/pexels-photo-2400393.jpeg?auto=compress&cs=tinysrgb&w=400" alt="gallery4"></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/12349602/pexels-photo-12349602.jpeg?auto=compress&cs=tinysrgb&w=400" alt="gallery5"></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/11528009/pexels-photo-11528009.jpeg?auto=compress&cs=tinysrgb&w=400" alt="gallery6"></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/862022/pexels-photo-862022.jpeg?auto=compress&cs=tinysrgb&w=400" alt="gallery7"></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/2273900/pexels-photo-2273900.jpeg?auto=compress&cs=tinysrgb&w=400" alt="gallery8"></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/7933096/pexels-photo-7933096.jpeg?auto=compress&cs=tinysrgb&w=400" alt="gallery9"></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/5358128/pexels-photo-5358128.jpeg?auto=compress&cs=tinysrgb&w=400" alt="gallery10"></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/3272428/pexels-photo-3272428.jpeg?auto=compress&cs=tinysrgb&w=400" alt="gallery11"></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/1003630/pexels-photo-1003630.jpeg?auto=compress&cs=tinysrgb&w=400" alt="gallery12"></div>
+    </div>
+  </div>
+</section>
+
+<section id="whyus">
+  <div class="container">
+    <h2 data-aos="fade-up" style="text-align:center;">Why Choose Us</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2rem; margin-top:3rem;">
+      <div class="glass-card" data-aos="flip-left"><i class="fas fa-leaf"></i><h3>Healthy Plants</h3></div>
+      <div class="glass-card" data-aos="flip-left"><i class="fas fa-chalkboard-user"></i><h3>Expert Guidance</h3></div>
+      <div class="glass-card" data-aos="flip-left"><i class="fas fa-tag"></i><h3>Affordable Prices</h3></div>
+      <div class="glass-card" data-aos="flip-left"><i class="fas fa-database"></i><h3>Large Collection</h3></div>
+      <div class="glass-card" data-aos="flip-left"><i class="fas fa-truck-fast"></i><h3>Fast Delivery</h3></div>
+      <div class="glass-card" data-aos="flip-left"><i class="fas fa-hand-holding-heart"></i><h3>Trusted Nursery</h3></div>
+    </div>
+  </div>
+</section>
+
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card"><div class="counter" data-target="5000">0</div><p>Plants Sold</p></div>
+      <div class="stat-card"><div class="counter" data-target="500">0</div><p>Happy Customers</p></div>
+      <div class="stat-card"><div class="counter" data-target="50">0</div><p>Plant Varieties</p></div>
+      <div class="stat-card"><div class="counter" data-target="10">0</div><p>Years Experience</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="container">
+    <h2 data-aos="fade-up">What Our Customers Say</h2>
+    <div class="testimonial-grid">
+      <div class="testi-card" data-aos="fade-right"><i class="fas fa-star" style="color:#f5b042;"></i><p>"Best quality sandalwood and fruit plants. The team's advice helped me start my farm!"</p><h4>- Rajesh Patil</h4></div>
+      <div class="testi-card" data-aos="fade-up"><i class="fas fa-star"></i><p>"Vasundhara Nursery has transformed my garden. Healthy plants and prompt service."</p><h4>- Sneha Joshi</h4></div>
+      <div class="testi-card" data-aos="fade-left"><i class="fas fa-star"></i><p>"Authentic sandalwood saplings, expert guidance, great investment. Highly recommended."</p><h4>- Anil Dhumal</h4></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2>Get in Touch</h2>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h3>Vasundhara Nursery</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Panchavati, Nashik, Maharashtra</p>
+        <p><i class="fas fa-phone-alt"></i> +91 90285 12345 (Placeholder)</p>
+        <p><i class="fab fa-whatsapp"></i> WhatsApp: +91 90285 67890</p>
+        <p><i class="fas fa-envelope"></i> contact@vasundhara-nursery.com</p>
+      </div>
+      <div class="contact-map">
+        <!-- ADD GOOGLE MAP HERE -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3747.362258113215!2d73.78342611492342!3d20.00719448656272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddecb9c1f5b9c1%3A0x68cde4e5bfc88d3d!2sPanchavati%2C%20Nashik!5e0!3m2!1sen!2sin!4v1648550199999!5m2!1sen!2sin" width="100%" height="220" style="border:0; border-radius:24px;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="max-width:1300px; margin:auto; display:flex; flex-wrap:wrap; justify-content:space-between;">
+    <div><i class="fas fa-seedling"></i> Vasundhara Nursery<br>© 2026 | Panchavati, Nashik</div>
+    <div>Quick Links: <a href="#home" style="color:#a9cf97;">Home</a> | <a href="#plants" style="color:#a9cf97;">Plants</a> | <a href="#gallery">Gallery</a></div>
+    <div><i class="fab fa-instagram"></i> <i class="fab fa-facebook"></i> <i class="fab fa-twitter"></i></div>
+  </div>
+</footer>
+
+<!-- GSAP & AOS & scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  // loader
+  window.addEventListener('load', () => {
+    document.getElementById('loader').classList.add('hide');
+    AOS.init({ duration: 800, once: false, mirror: false });
+  });
+
+  // progress bar
+  window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById('progressBar').style.width = scrolled + '%';
+  });
+
+  // animated counters
+  const counters = document.querySelectorAll('.counter');
+  let started = false;
+  function startCounters() {
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        let count = +counter.innerText;
+        let increment = target / 80;
+        if (count < target) {
+          count = Math.min(Math.ceil(count + increment), target);
+          counter.innerText = count;
+          setTimeout(updateCount, 20);
+        } else counter.innerText = target + (counter.innerText.includes('+')?'':'+');
+      };
+      updateCount();
+    });
+  }
+  window.addEventListener('scroll', function triggerOnce() {
+    const statsSec = document.getElementById('stats');
+    if (statsSec) {
+      const rect = statsSec.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100 && !started) {
+        started = true;
+        startCounters();
+        window.removeEventListener('scroll', triggerOnce);
+      }
+    }
+  });
+
+  // floating leaves
+  function createFloatingLeaf() {
+    const leaf = document.createElement('div');
+    leaf.classList.add('floating-leaf');
+    leaf.innerHTML = ['🌿','🍃','🌱','🍂','🌾'][Math.floor(Math.random()*5)];
+    leaf.style.left = Math.random() * 100 + '%';
+    leaf.style.fontSize = 1.2 + Math.random() * 1.5 + 'rem';
+    leaf.style.animationDuration = 8 + Math.random() * 8 + 's';
+    leaf.style.opacity = 0.25 + Math.random() * 0.3;
+    document.body.appendChild(leaf);
+    setTimeout(() => leaf.remove(), 15000);
+  }
+  setInterval(createFloatingLeaf, 3000);
+
+  // mouse glow
+  const cursorGlow = document.getElementById('glowCursor');
+  document.addEventListener('mousemove', (e) => {
+    gsap.to(cursorGlow, { duration: 0.2, x: e.clientX, y: e.clientY, ease: "power2.out" });
+  });
+
+  // parallax & GSAP scroll animations
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.utils.toArray('.plant-card').forEach(card => {
+    gsap.from(card, { opacity: 0, y: 60, duration: 0.7, scrollTrigger: { trigger: card, start: "top 85%", toggleActions: "play none none reverse" } });
+  });
+  gsap.from('.hero-content', { scale: 0.9, opacity: 0, duration: 1, delay: 0.3 });
+  gsap.from('.about-text', { scrollTrigger: "#about", x: -50, opacity: 0, duration: 0.8 });
+  gsap.from('.about-cards .glass-card', { scrollTrigger: "#about", stagger: 0.2, x: 40, opacity: 0 });
+
+  // mobile menu
+  const menuBtn = document.getElementById('mobileMenuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+
+  // smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if(navLinks.classList.contains('active')) navLinks.classList.remove('active');
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vasundhara Nursery - Premium Fruit & Sandalwood Plants in Panchavati, Nashik. Quality plants for homes, farms, and commercial plantations.">
+    <title>Vasundhara Nursery | Premium Plants in Nashik</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap)" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="[unpkg.com](https://unpkg.com/aos@2.3.1/dist/aos.css)" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-leaf">
+                <i class="fas fa-leaf"></i>
+            </div>
+            <div class="loader-text">Vasundhara</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <!-- Floating Leaves -->
+    <div class="floating-leaves" id="floatingLeaves"></div>
+    <!-- Mouse Glow Effect -->
+    <div class="mouse-glow" id="mouseGlow"></div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <i class="fas fa-seedling"></i>
+                <span>Vasundhara</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#plants" class="nav-link">Plants</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="tel:+919876543210" class="nav-phone">
+                    <i class="fas fa-phone"></i>
+                    <span>Call Now</span>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- CHANGE HERO IMAGE HERE -->
+        <!-- Replace the background-image URL in CSS or use inline style -->
+        <!-- Current: [images.unsplash.com](https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920) -->
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-particles" id="heroParticles"></div>
+        
+        <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-down" data-aos-delay="200">
+                <i class="fas fa-award"></i>
+                <span>Premium Quality Since 2014</span>
+            </div>
+            
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="400">
+                <span class="title-line">Vasundhara</span>
+                <span class="title-line accent">Nursery</span>
+            </h1>
+            
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="600">
+                Premium Fruit & Sandalwood Plants in Panchavati, Nashik
+            </p>
+            
+            <p class="hero-description" data-aos="fade-up" data-aos-delay="700">
+                Nurturing nature's finest specimens for homes, farms & commercial plantations
+            </p>
+            
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800">
+                <a href="#plants" class="btn btn-primary">
+                    <span>Explore Plants</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span>Contact Us</span>
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+            
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="1000">
+                <div class="hero-stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Varieties</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Years</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number">5K+</span>
+                    <span class="stat-label">Plants Sold</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-scroll">
+            <a href="#about" class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </a>
+        </div>
+        
+        <div class="hero-decoration">
+            <div class="deco-circle deco-circle-1"></div>
+            <div class="deco-circle deco-circle-2"></div>
+            <div class="deco-leaf deco-leaf-1"><i class="fas fa-leaf"></i></div>
+            <div class="deco-leaf deco-leaf-2"><i class="fas fa-seedling"></i></div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images" data-aos="fade-right">
+                    <div class="about-img-main">
+                        <!-- REPLACE THIS IMAGE WITH ACTUAL NURSERY IMAGE -->
+                        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=800)" alt="Nursery Garden">
+                        <div class="img-badge">
+                            <span class="badge-number">10+</span>
+                            <span class="badge-text">Years of Excellence</span>
+                        </div>
+                    </div>
+                    <div class="about-img-secondary">
+                        <!-- REPLACE THIS IMAGE WITH ACTUAL NURSERY IMAGE -->
+                        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=600)" alt="Plant Care">
+                    </div>
+                </div>
+                
+                <div class="about-content" data-aos="fade-left">
+                    <span class="section-tag">About Us</span>
+                    <h2 class="section-title">Cultivating Dreams,<br>Growing Excellence</h2>
+                    
+                    <p class="about-text">
+                        Vasundhara Nursery is a trusted plant nursery located in the heart of Panchavati, Nashik. 
+                        We specialize in offering premium-quality fruit plants, sandalwood plants, and garden 
+                        varieties for homes, farms, and commercial plantations.
+                    </p>
+                    
+                    <p class="about-text">
+                        Our commitment to sustainable farming practices and expert horticultural knowledge 
+                        ensures that every plant we deliver thrives in its new home.
+                    </p>
+                    
+                    <div class="about-features">
+                        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="feature-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>10+ Years Experience</h4>
+                                <p>Decade of expertise in plant cultivation and care</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Quality Assurance</h4>
+                                <p>100% healthy plants with growth guarantee</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="feature-icon">
+                                <i class="fas fa-recycle"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Sustainable Farming</h4>
+                                <p>Eco-friendly practices for a greener tomorrow</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-bg-pattern"></div>
+    </section>
+    <!-- Featured Plants Section -->
+    <section class="plants" id="plants">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Our Collection</span>
+                <h2 class="section-title">Featured Plants</h2>
+                <p class="section-desc">Discover our carefully curated selection of premium plants</p>
+            </div>
+            
+            <div class="plants-tabs" data-aos="fade-up" data-aos-delay="200">
+                <button class="tab-btn active" data-tab="fruit">Fruit Plants</button>
+                <button class="tab-btn" data-tab="sandalwood">Sandalwood</button>
+                <button class="tab-btn" data-tab="garden">Garden Plants</button>
+            </div>
+            
+            <div class="plants-grid" id="plantsGrid">
+                <!-- Fruit Plants -->
+                <div class="plant-card" data-category="fruit" data-aos="fade-up" data-aos-delay="100">
+                    <div class="plant-image">
+                        <!-- CHANGE PLANT IMAGE HERE -->
+                        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1553279768-865429fa0078?w=600)" alt="Mango Plant">
+                        <div class="plant-overlay">
+                            <a href="#contact" class="plant-btn">Enquire Now</a>
+                        </div>
+                        <span class="plant-badge">Bestseller</span>
+                    </div>
+                    <div class="plant-info">
+                        <h3>Alphonso Mango</h3>
+                        <p>Premium grafted mango plants with excellent fruit quality</p>
+                        <div class="plant-meta">
+                            <span><i class="fas fa-ruler-vertical"></i> 2-3 ft</span>
+                            <span><i class="fas fa-sun"></i> Full Sun</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="plant-card" data-category="fruit" data-aos="fade-up" data-aos-delay="200">
+                    <div class="plant-image">
+                        <!-- CHANGE PLANT IMAGE HERE -->
+                        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1536511132770-e5058c7e8c46?w=600)" alt="Guava Plant">
+                        <div class="plant-overlay">
+                            <a href="#contact" class="plant-btn">Enquire Now</a>
+                        </div>
+                    </div>
+                    <div class="plant-info">
+                        <h3>Taiwan Pink Guava</h3>
+                        <p>High-yielding variety with sweet, pink flesh</p>
+                        <div class="plant-meta">
+                            <span><i class="fas fa-ruler-vertical"></i> 1-2 ft</span>
+                            <span><i class="fas fa-sun"></i> Full Sun</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="plant-card" data-category="fruit" data-aos="fade-up" data-aos-delay="300">
+                    <div class="plant-image">
+                        <!-- CHANGE PLANT IMAGE HERE -->
+                        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1590502593747-42a996133562?w=600)" alt="Lemon Plant">
+                        <div class="plant-overlay">
+                            <a href="#contact" class="plant-btn">Enquire Now</a>
+                        </div>
+                    </div>
+                    <div class="plant-info">
+                        <h3>Kagzi Lemon</h3>
+                        <p>Thornless variety producing juicy, seedless fruits</p>
+                        <div class="plant-meta">
+                            <span><i class="fas fa-ruler-vertical"></i> 1-2 ft</span>
+                            <span><i class="fas fa-tint"></i> Moderate</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="plant-card" data-category="fruit" data-aos="fade-up" data-aos-delay="400">
+                    <div class="plant-image">
+                        <!-- CHANGE PLANT IMAGE HERE -->
+                        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1615484477778-ca3b77940c25?w=600)" alt="Pomegranate Plant">
+                        <div class="plant-overlay">
+                            <a href="#contact" class="plant-btn">Enquire Now</a>
+                        </div>
+                        <span class="plant-badge hot">Popular</span>
+                    </div>
+                    <div class="plant-info">
+                        <h3>Bhagwa Pomegranate</h3>
+                        <p>Ruby-red arils with exceptional sweetness</p>
+                        <div class="plant-meta">
+                            <span><i class="fas fa-ruler-vertical"></i> 2-3 ft</span>
+                            <span><i class="fas fa-sun"></i> Full Sun</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="plant-card" data-category="fruit" data-aos="fade-up" data-aos-delay="500">
+                    <div class="plant-image">
+                        <!-- CHANGE PLANT IMAGE HERE -->
+                        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?w=600)" alt="Sapota Plant">
+                        <div class="plant-overlay">
+                            <a href="#contact" class="plant-btn">Enquire Now</a>
+                        </div>
+                    </div>
+                    <div class="plant-info">
+                        <h3>Cricket Ball Sapota</h3>
+                        <p>Large-fruited variety with honey-sweet taste</p>
+                        <div class="plant-meta">
+                            <span><i class="fas fa-ruler-vertical"></i> 2-3 ft</span>
+                            <span><i class="fas fa-cloud-sun"></i> Partial</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sandalwood Plants -->
+                <div class="plant-card" data-category="sandalwood" data-aos="fade-up" data-aos-delay="100">
+                    <div class="plant-image">
+                        <!-- CHANGE PLANT IMAGE HERE -->
+                        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1509423350716-97f9360b4e09?w=600)" alt="Sandalwood Plant">
+                        <div class="plant-overlay">
+                            <a href="#contact" class="plant-btn">Enquire Now</a>
+                        </div>
+                        <span class="plant-badge premium">Premium</span>
+                    </div>
+                    <div class="plant-info">
+                        <h3>Indian Sandalwood</h3>
+                        <p>Authentic Santalum album seedlings for commercial plantation</p>
+                        <div class="plant-meta">
+                            <span><i class="fas fa-ruler-vertical"></i> 1-2 ft</span>
+                            <span><i class="fas fa-sun"></i> Full Sun</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="plant-card" data-category="sandalwood" data-aos="fade-up" data-aos-delay="200">
+                    <div class="plant-image">
+                        <!-- CHANGE PLANT IMAGE HERE -->
+                        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=600)" alt="Sandalwood Tissue Culture">
+                        <div class="plant-overlay">
+                            <a href="#contact" class="plant-btn">Enquire Now</a>
+                        </div>
+                    </div>
+                    <div class="plant-info">
+                        <h3>Tissue Culture Sandalwood</h3>
+                        <p>Lab-grown plants ensuring genetic purity and disease resistance</p>
+                        <div class="plant-meta">
+                            <span><i class="fas fa-dna"></i> TC Grade</span>
+                            <span><i class="fas fa-certificate"></i> Certified</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Garden Plants -->
+                <div class="plant-card" data-category="garden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="plant-image">
+                        <!-- CHANGE PLANT IMAGE HERE -->
+                        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600)" alt="Rose Plant">
+                        <div class="plant-overlay">
+                            <a href="#contact" class="plant-btn">Enquire Now</a>
+                        </div>
+                    </div>
+                    <div class="plant-info">
+                        <h3>Hybrid Tea Rose</h3>
+                        <p>Fragrant blooms in vibrant colors for your garden</p>
+                        <div class="plant-meta">
+                            <span><i class="fas fa-ruler-vertical"></i> 1-2 ft</span>
+                            <span><i class="fas fa-sun"></i> Full Sun</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="plant-card" data-category="garden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="plant-image">
+                        <!-- CHANGE PLANT IMAGE HERE -->
+                        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=600)" alt="Jasmine Plant">
+                        <div class="plant-overlay">
+                            <a href="#contact" class="plant-btn">Enquire Now</a>
+                        </div>
+                    </div>
+                    <div class="plant-info">
+                        <h3>Arabian Jasmine</h3>
+                        <p>Intensely fragrant white flowers, perfect for gardens</p>
+                        <div class="plant-meta">
+                            <span><i class="fas fa-ruler-vertical"></i> 1-3 ft</span>
+                            <span><i class="fas fa-cloud-sun"></i> Partial</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="plant-card" data-category="garden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="plant-image">
+                        <!-- CHANGE PLANT IMAGE HERE -->
+                        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=600)" alt="Bougainvillea">
+                        <div class="plant-overlay">
+                            <a href="#contact" class="plant-btn">Enquire Now</a>
+                        </div>
+                    </div>
+                    <div class="plant-info">
+                        <h3>Bougainvillea</h3>
+                        <p>Vibrant flowering vine in multiple color varieties</p>
+                        <div class="plant-meta">
+                            <span><i class="fas fa-ruler-vertical"></i> 2-4 ft</span>
+                            <span><i class="fas fa-sun"></i> Full Sun</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="plants-cta" data-aos="fade-up">
+                <a href="#contact" class="btn btn-primary">
+                    <span>View All Plants</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Sandalwood Showcase -->
+    <section class="sandalwood-showcase" id="sandalwood">
+        <!-- CHANGE SANDALWOOD IMAGE HERE -->
+        <!-- Replace the background-image URL in CSS -->
+        <!-- Current: [images.unsplash.com](https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920) -->
+        <div class="showcase-overlay"></div>
+        
+        <div class="container">
+            <div class="showcase-content">
+                <span class="section-tag light" data-aos="fade-up">Premium Investment</span>
+                <h2 class="showcase-title" data-aos="fade-up" data-aos-delay="100">
+                    Sandalwood Plantation
+                </h2>
+                <p class="showcase-text" data-aos="fade-up" data-aos-delay="200">
+                    Invest in India's green gold. Our premium sandalwood plants offer exceptional 
+                    returns with sustainable growth over 15-20 years.
+                </p>
+                
+                <div class="showcase-facts" data-aos="fade-up" data-aos-delay="300">
+                    <div class="fact-item">
+                        <div class="fact-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="fact-content">
+                            <h4>High-Value Plantation</h4>
+                            <p>Premium heartwood valued at ₹10,000+ per kg</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <div class="fact-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <div class="fact-content">
+                            <h4>Long-Term Investment</h4>
+                            <p>Mature trees yield 15-20 kg heartwood</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fact-item">
+                        <div class="fact-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="fact-content">
+                            <h4>Sustainable Growth</h4>
+                            <p>Eco-friendly farming with government support</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="#contact" class="btn btn-light" data-aos="fade-up" data-aos-delay="400">
+                    <span>Start Your Plantation</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="showcase-decoration">
+            <div class="deco-line"></div>
+        </div>
+    </section>
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Our Space</span>
+                <h2 class="section-title">Nursery Gallery</h2>
+                <p class="section-desc">Take a visual tour of our beautiful nursery</p>
+            </div>
+            
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- GALLERY IMAGE 1 -->
+                <div class="gallery-item large" data-aos="fade-up" data-aos-delay="100">
+                    <!-- REPLACE THIS IMAGE WITH ACTUAL NURSERY IMAGE -->
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800)" alt="Nursery Overview">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Nursery Overview</span>
+                    </div>
+                </div>
+                
+                <!-- GALLERY IMAGE 2 -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
+                    <!-- REPLACE THIS IMAGE WITH ACTUAL NURSERY IMAGE -->
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=600)" alt="Plant Collection">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Plant Collection</span>
+                    </div>
+                </div>
+                
+                <!-- GALLERY IMAGE 3 -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <!-- REPLACE THIS IMAGE WITH ACTUAL NURSERY IMAGE -->
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=600)" alt="Garden Area">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Garden Area</span>
+                    </div>
+                </div>
+                
+                <!-- GALLERY IMAGE 4 -->
+                <div class="gallery-item tall" data-aos="fade-up" data-aos-delay="250">
+                    <!-- REPLACE THIS IMAGE WITH ACTUAL NURSERY IMAGE -->
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600)" alt="Seedling Nursery">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Seedling Nursery</span>
+                    </div>
+                </div>
+                
+                <!-- GALLERY IMAGE 5 -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                    <!-- REPLACE THIS IMAGE WITH ACTUAL NURSERY IMAGE -->
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=600)" alt="Flowering Plants">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Flowering Plants</span>
+                    </div>
+                </div>
+                
+                <!-- GALLERY IMAGE 6 -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="350">
+                    <!-- REPLACE THIS IMAGE WITH ACTUAL NURSERY IMAGE -->
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600)" alt="Fruit Saplings">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Fruit Saplings</span>
+                    </div>
+                </div>
+                
+                <!-- GALLERY IMAGE 7 -->
+                <div class="gallery-item large" data-aos="fade-up" data-aos-delay="400">
+                    <!-- REPLACE THIS IMAGE WITH ACTUAL NURSERY IMAGE -->
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800)" alt="Green House">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Green House</span>
+                    </div>
+                </div>
+                
+                <!-- GALLERY IMAGE 8 -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="450">
+                    <!-- REPLACE THIS IMAGE WITH ACTUAL NURSERY IMAGE -->
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=600)" alt="Plant Care">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Plant Care</span>
+                    </div>
+                </div>
+                
+                <!-- GALLERY IMAGE 9 -->
+                <div class="gallery-item tall" data-aos="fade-up" data-aos-delay="500">
+                    <!-- REPLACE THIS IMAGE WITH ACTUAL NURSERY IMAGE -->
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600)" alt="Ornamental Plants">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Ornamental Plants</span>
+                    </div>
+                </div>
+                
+                <!-- GALLERY IMAGE 10 -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="550">
+                    <!-- REPLACE THIS IMAGE WITH ACTUAL NURSERY IMAGE -->
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1509587584298-0f3b3a3a1797?w=600)" alt="Potted Plants">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Potted Plants</span>
+                    </div>
+                </div>
+                
+                <!-- GALLERY IMAGE 11 -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="600">
+                    <!-- REPLACE THIS IMAGE WITH ACTUAL NURSERY IMAGE -->
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=600)" alt="Bonsai Collection">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Bonsai Collection</span>
+                    </div>
+                </div>
+                
+                <!-- GALLERY IMAGE 12 -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="650">
+                    <!-- REPLACE THIS IMAGE WITH ACTUAL NURSERY IMAGE -->
+                    <img src="[images.unsplash.com](https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600)" alt="Rose Garden">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>Rose Garden</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Why Choose Us -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Our Promise</span>
+                <h2 class="section-title">Why Choose Us</h2>
+                <p class="section-desc">Experience excellence in every plant we nurture</p>
+            </div>
+            
+            <div class="why-grid">
+                <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="why-icon">
+                        <i class="fas fa-heartbeat"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3>Healthy Plants</h3>
+                    <p>Every plant undergoes rigorous health checks before reaching you</p>
+                </div>
+                
+                <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="why-icon">
+                        <i class="fas fa-user-graduate"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3>Expert Guidance</h3>
+                    <p>Free consultation and aftercare support from our horticulturists</p>
+                </div>
+                
+                <div class="why-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="why-icon">
+                        <i class="fas fa-tags"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3>Affordable Prices</h3>
+                    <p>Premium quality plants at competitive market prices</p>
+                </div>
+                
+                <div class="why-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="why-icon">
+                        <i class="fas fa-warehouse"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3>Large Collection</h3>
+                    <p>50+ varieties of fruit, sandalwood, and ornamental plants</p>
+                </div>
+                
+                <div class="why-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="why-icon">
+                        <i class="fas fa-truck"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Safe and timely delivery across Maharashtra and India</p>
+                </div>
+                
+                <div class="why-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="why-icon">
+                        <i class="fas fa-award"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3>Trusted Nursery</h3>
+                    <p>10+ years of building trust with 500+ satisfied customers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Statistics Section -->
+    <section class="stats" id="stats">
+        <div class="stats-bg"></div>
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="stat-number" data-target="5000">0</div>
+                    <div class="stat-suffix">+</div>
+                    <div class="stat-label">Plants Sold</div>
+                </div>
+                
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-suffix">+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-suffix">+</div>
+                    <div class="stat-label">Plant Varieties</div>
+                </div>
+                
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-number" data-target="10">0</div>
+                    <div class="stat-suffix">+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Reviews</span>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-desc">Real experiences from real plant lovers</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Excellent quality mango plants! Bought 20 Alphonso saplings for my farm 
+                            and all of them are thriving. The team provided great guidance on plantation 
+                            and care. Highly recommended!"
+                        </p>
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <span>RK</span>
+                        </div>
+                        <div class="author-info">
+                            <h4>Rajesh Kulkarni</h4>
+                            <span>Farm Owner, Nashik</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Started my sandalwood plantation journey with Vasundhara Nursery. Their 
+                            tissue culture plants are genuine and come with all necessary documentation. 
+                            The owner personally guides you through the entire process. Best nursery 
+                            in Nashik!"
+                        </p>
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <span>SP</span>
+                        </div>
+                        <div class="author-info">
+                            <h4>Sunita Patil</h4>
+                            <span>Plantation Investor, Pune</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Beautiful collection of garden plants. Transformed my terrace garden with 
+                            their roses and jasmine plants. Very affordable prices and the plants were 
+                            delivered in perfect condition. Will definitely buy again!"
+                        </p>
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <span>AM</span>
+                        </div>
+                        <div class="author-info">
+                            <h4>Anil Mehta</h4>
+                            <span>Home Gardener, Mumbai</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <span class="section-tag">Get In Touch</span>
+                    <h2 class="section-title">Visit Our Nursery</h2>
+                    <p class="contact-desc">
+                        Come explore our collection or reach out for any queries. 
+                        We're here to help you grow!
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>Vasundhara Nursery<br>Panchavati, Nashik - 422003<br>Maharashtra, India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <!-- REPLACE WITH ACTUAL PHONE NUMBER -->
+                                <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>WhatsApp</h4>
+                                <!-- REPLACE WITH ACTUAL WHATSAPP NUMBER -->
+                                <p><a href="[wa.me](https://wa.me/919876543210)" target="_blank">+91 98765 43210</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <!-- REPLACE WITH ACTUAL EMAIL -->
+                                <p><a href="mailto:info@vasundharanursery.com">info@vasundharanursery.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Working Hours</h4>
+                                <p>Mon - Sat: 8:00 AM - 7:00 PM<br>Sunday: 9:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-buttons">
+                        <!-- REPLACE WITH ACTUAL WHATSAPP NUMBER -->
+                        <a href="[wa.me](https://wa.me/919876543210?text=Hi) I'm interested in your plants." class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp Us</span>
+                        </a>
+                        <!-- REPLACE WITH ACTUAL PHONE NUMBER -->
+                        <a href="tel:+919876543210" class="btn btn-secondary">
+                            <i class="fas fa-phone"></i>
+                            <span>Call Now</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-map" data-aos="fade-left">
+                    <div class="map-container">
+                        <!-- ADD GOOGLE MAP HERE -->
+                        <!-- Replace the src with your actual Google Maps embed URL -->
+                        <!-- Get embed code from: [google.com](https://www.google.com/maps) -> Share -> Embed a map -->
+                        <iframe 
+                            src="[google.com](https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.123456789!2d73.789012345!3d19.987654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDAwJzAwLjAiTiA3M8KwNDcnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin)"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Vasundhara Nursery Location">
+                        </iframe>
+                        <div class="map-overlay-info">
+                            <i class="fas fa-seedling"></i>
+                            <span>Vasundhara Nursery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,50 C150,100 350,0 500,50 C650,100 800,0 1000,50 C1150,100 1300,0 1440,50 L1440,100 L0,100 Z"></path>
+            </svg>
+        </div>
+        
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="footer-logo">
+                        <i class="fas fa-seedling"></i>
+                        <span>Vasundhara</span>
+                    </a>
+                    <p class="footer-desc">
+                        Premium quality fruit plants, sandalwood plants, and garden varieties 
+                        for homes, farms, and commercial plantations.
+                    </p>
+                    <div class="footer-social">
+                        <!-- REPLACE WITH ACTUAL SOCIAL MEDIA LINKS -->
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#plants">Our Plants</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Plant Categories</h4>
+                    <ul>
+                        <li><a href="#plants">Fruit Plants</a></li>
+                        <li><a href="#sandalwood">Sandalwood Plants</a></li>
+                        <li><a href="#plants">Garden Plants</a></li>
+                        <li><a href="#plants">Flowering Plants</a></li>
+                        <li><a href="#plants">Indoor Plants</a></li>
+                        <li><a href="#plants">Medicinal Plants</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Panchavati, Nashik - 422003</span>
+                        </li>
+                        <li>
+                            <!-- REPLACE WITH ACTUAL PHONE NUMBER -->
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
+                        </li>
+                        <li>
+                            <!-- REPLACE WITH ACTUAL EMAIL -->
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@vasundharanursery.com">info@vasundharanursery.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Vasundhara Nursery. All rights reserved.</p>
+                <p>Crafted with <i class="fas fa-heart"></i> in Nashik</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+    <!-- Lightbox for Gallery -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+        <button class="lightbox-prev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-next" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="Gallery image" id="lightboxImg">
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="[unpkg.com](https://unpkg.com/aos@2.3.1/dist/aos.js)"></script>
+    <script src="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js)"></script>
+    <script src="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js)"></script>
+    <script src="script.js"></script>
+</body>
+</html>
